@@ -23,9 +23,42 @@
 
       </header>
       <section>
-        <h1>BlueMix, an IBM Open Cloud Initiative</h3>
+        <h1>BlueMix, an IBM Open Cloud Initiative</h1>
+        
+        <h3 style="color:blue;">Debug and Hints</h3>
 
-        <h3>~WordPress Guidance for using within the BlueMix environment</h4>
+        <h4>Provides guidance and suggestions to debug bluemix application and service development</h4>
+        
+        <h5><b>Debugging applications</b></h5>
+        
+        <b>CF LOGS &lt;APPNAME&gt;</b>
+        A simple but very effective way to debug is to use the cf logs <appname> command.  This command tails the end of the application stderr and stdout logs and prints them to your console.For example, here is the result of the vmc logs command for a java web application called plants.
+        
+        <pre><code>c:\>cf logs plants
+        Reading logs/stdout.log... OK
+        Launching defaultServer (wlp-1.0.1.20130309-1525/websphere-kernel_1.0.1) on IBM
+        J9 VM, version pxa6470sr4fp1-20130325_01 (SR4 FP1) (en_US)
+        [AUDIT   ] CWWKE0001I: The server defaultServer has been launched.
+        [AUDIT   ] CWWKS4104A: LTPA keys created in 1.905 seconds. LTPA key file: /var/v
+        cap.local/dea/apps/plants-0-2844042ebc9b3138d53cb2c7db3a138b/wlp/usr/servers/def
+        aultServer/resources/security/ltpa.keys
+        [AUDIT   ] CWWKZ0058I: Monitoring dropins for applications.
+        [WARNING ] WARN_MANIFEST_CLASSPATH_NOT_FOUND
+        
+                                       derbyLocale_cs.jar
+        
+                                       file:/var/vcap.local/dea/apps/plants-0-2844042ebc
+        9b3138d53cb2c7db3a138b/wlp/usr/servers/defaultServer/apps/myapp.war/WEB-INF/lib/
+        derby-10.8.2.2.jar</code></pre>
+        
+        <b>CF EVENTS &lt;APPNAME&gt;</b>
+        Show events for an application.
+        <pre><code>time                        instance index   description                 exit status
+        2013-08-07 16:31:47 +0000   0                out of memory               Failure (255)
+        2013-08-07 16:31:48 +0000   0                Hostname not supplied: ''   Failure (-1)</code></pre>
+
+        <hr>
+        <h3 style="color:blue;">WordPress</h3>
 
         <h4>WordPress is a <a href="http://en.wikipedia.org/wiki/Free_and_open_source">free and open source</a> <a href="http://en.wikipedia.org/wiki/Blog">blogging</a> tool and a <a href="http://en.wikipedia.org/wiki/Content_management_system">content management system</a> (CMS) based on <a href="http://en.wikipedia.org/wiki/PHP">PHP</a> and <a href="http://en.wikipedia.org/wiki/MySQL">MySQL</a> which runs on a <a href="http://en.wikipedia.org/wiki/Web_hosting_service">web hosting service</a>.  Features include a plug-in architecture and a template system.  WordPress is completely customizable and can be used for almost anything.   You can use Wordpress as a foundation of your web application to call social data APIs.</h5>
         
